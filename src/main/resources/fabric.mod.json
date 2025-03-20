@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "pkwklink",
+  "version": "${version}",
+  "name": "PukiWiki Link",
+  "description": "Linking pukiwiki and minecraft for fabric",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/pkwklink/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.pitan76.pkwklink.client.PukiWikiLinkClient"
+    ],
+    "main": [
+      "net.pitan76.pkwklink.PukiWikiLink"
+    ]
+  },
+  "mixins": [
+    "pkwklink.mixins.json",
+    {
+      "config": "pkwklink.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
