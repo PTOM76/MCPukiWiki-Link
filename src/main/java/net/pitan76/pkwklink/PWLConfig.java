@@ -22,6 +22,8 @@ public class PWLConfig {
 
         url = CONFIG.getStringOrDefault("url", "https://pukiwiki.example.com/");
         token = CONFIG.getStringOrDefault("token", "********************************");
+
+        PukiWikiLink.pukiBot = new PukiBot(url, token);
     }
 
     public static void createConfig() {
