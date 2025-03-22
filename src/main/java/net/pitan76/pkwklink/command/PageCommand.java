@@ -39,7 +39,9 @@ public class PageCommand extends LiteralCommand {
 
                         String source = map.get("source").toString();
 
-                        e.sendSuccess("Title: " + page + "\nSource: " + source, false);
+                        source = source.replaceAll("\\\\n", "\n");
+
+                        e.sendSuccess("Title: " + page + "\nSource: \n" + source, false);
                     }
 
                     @Override
