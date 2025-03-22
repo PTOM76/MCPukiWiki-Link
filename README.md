@@ -1,0 +1,3 @@
+# MCPukiWiki Link
+無駄に利用用途が不明なmodですが、マイクラからPukiWikiのページを読み込んだり書き込んだりとかできます。
+PukiBot使ってるので使うにはbot.inc.phpをPukiWiki側に入れてセットアップする必要があります。
