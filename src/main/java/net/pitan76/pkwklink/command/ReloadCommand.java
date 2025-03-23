@@ -16,6 +16,6 @@ public class ReloadCommand extends LiteralCommand {
     @Override
     public void execute(ServerCommandEvent e) {
         PWLConfig.reloadConfig();
-        e.sendSuccess(PukiWikiLink.PREFIX + "The config has been reloaded", false);
+        e.sendSuccess(PukiWikiLink.PREFIX + "The config has been reloaded");
     }
 }

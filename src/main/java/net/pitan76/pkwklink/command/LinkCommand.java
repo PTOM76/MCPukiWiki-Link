@@ -42,7 +42,7 @@ public class LinkCommand extends LiteralCommand {
                         String masked = token.substring(0, token.length() / 2) + "*".repeat(token.length() / 2);
 
                         PukiWikiLink.pukiBot = new PukiBot(url, token);
-                        e.sendSuccess(PukiWikiLink.PREFIX + "PukiWikiLink has been linked to " + url + " with token " + masked, false);
+                        e.sendSuccess(PukiWikiLink.PREFIX + "PukiWikiLink has been linked to " + url + " with token " + masked);
                     }
 
                     @Override
@@ -54,7 +54,7 @@ public class LinkCommand extends LiteralCommand {
 
             @Override
             public void execute(StringCommandEvent e) {
-                e.sendSuccess(PukiWikiLink.PREFIX + "/pkwklink link <url> <token>", false);
+                e.sendSuccess(PukiWikiLink.PREFIX + "/pkwklink link <url> <token>");
             }
 
             @Override
@@ -66,6 +66,6 @@ public class LinkCommand extends LiteralCommand {
 
     @Override
     public void execute(ServerCommandEvent e) {
-        e.sendSuccess(PukiWikiLink.PREFIX + "/pkwklink link <url> <token>", false);
+        e.sendSuccess(PukiWikiLink.PREFIX + "/pkwklink link <url> <token>");
     }
 }

@@ -26,12 +26,12 @@ public class InfoCommand extends LiteralCommand {
 
             e.sendSuccess("§5[§aPukiWikiLink§5]§r\n" +
                 "- " + TextUtil.translatable("message.pkwklink.title").getString() + ": " + title + "\n" +
-                "- " + TextUtil.translatable("message.pkwklink.admin").getString() + ": " + admin, false);
+                "- " + TextUtil.translatable("message.pkwklink.admin").getString() + ": " + admin);
 
             // map の内容をjsonに変換して表示
             //Gson gson = new Gson();
             //String json = gson.toJson(map);
-            //e.sendSuccess(PukiWikiLink.PREFIX + "" + json, false);
+            //e.sendSuccess(PukiWikiLink.PREFIX + "" + json);
 
         } catch (IOException ex) {
             e.sendFailure(PukiWikiLink.PREFIX + "Failed to get information from the PukiWiki");

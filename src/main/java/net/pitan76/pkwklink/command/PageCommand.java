@@ -39,7 +39,7 @@ public class PageCommand extends LiteralCommand {
                         String source = map.get("source").toString();
                         source = source.replaceAll("\\\\n", "\n");
 
-                        e.sendSuccess("Title: " + page + "\nSource: \n" + source, false);
+                        e.sendSuccess("Title: " + page + "\nSource: \n" + source);
                     }
 
                     @Override
@@ -51,7 +51,7 @@ public class PageCommand extends LiteralCommand {
 
             @Override
             public void execute(ServerCommandEvent e) {
-                e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page read <page>", false);
+                e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page read <page>");
 
             }
         });
@@ -89,7 +89,7 @@ public class PageCommand extends LiteralCommand {
                                     int code = Integer.parseInt(map.get("code").toString());
                                     if (map.containsKey("code") && code == 201) {
                                         String msg = map.get("msg").toString();
-                                        e.sendSuccess(PukiWikiLink.PREFIX + "Appended the page: " + msg, false);
+                                        e.sendSuccess(PukiWikiLink.PREFIX + "Appended the page: " + msg);
                                         return;
                                     }
 
@@ -110,7 +110,7 @@ public class PageCommand extends LiteralCommand {
 
                     @Override
                     public void execute(StringCommandEvent e) {
-                        e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page write <page> <source>", false);
+                        e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page write <page> <source>");
                     }
 
                     @Override
@@ -122,7 +122,7 @@ public class PageCommand extends LiteralCommand {
 
             @Override
             public void execute(ServerCommandEvent e) {
-                e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page write <page>", false);
+                e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page write <page>");
 
             }
         });
@@ -174,7 +174,7 @@ public class PageCommand extends LiteralCommand {
                                     int code = Integer.parseInt(map2.get("code").toString());
                                     if (map2.containsKey("code") && code == 201) {
                                         String msg = map2.get("msg").toString();
-                                        e.sendSuccess(PukiWikiLink.PREFIX + "Appended the page: " + msg, false);
+                                        e.sendSuccess(PukiWikiLink.PREFIX + "Appended the page: " + msg);
                                         return;
                                     }
 
@@ -197,7 +197,7 @@ public class PageCommand extends LiteralCommand {
 
                     @Override
                     public void execute(StringCommandEvent e) {
-                        e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page append <page> <source>", false);
+                        e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page append <page> <source>");
                     }
 
                     @Override
@@ -209,7 +209,7 @@ public class PageCommand extends LiteralCommand {
 
             @Override
             public void execute(ServerCommandEvent e) {
-                e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page append <page>", false);
+                e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page append <page>");
 
             }
         });
@@ -217,6 +217,6 @@ public class PageCommand extends LiteralCommand {
 
     @Override
     public void execute(ServerCommandEvent e) {
-        e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page [read/write/append] <page> (<source>)", false);
+        e.sendSuccess(PukiWikiLink.PREFIX + " /pkwklink page [read/write/append] <page> (<source>)");
     }
 }
