@@ -7,6 +7,11 @@ import net.pitan76.pukibot.PukiBot;
 
 public class PukiWikiLink extends ExtendModInitializer {
 
+    public static final String MOD_ID = "pkwklink";
+    public static final String MOD_NAME = "PukiWikiLink";
+
+    public static final String PREFIX = "§9[§bPukiWikiLink§9]§r ";
+
     public static PukiBot pukiBot;
 
     @Override
@@ -18,6 +23,6 @@ public class PukiWikiLink extends ExtendModInitializer {
 
     @Override
     public String getId() {
-        return "pkwklink";
+        return MOD_ID;
     }
 }

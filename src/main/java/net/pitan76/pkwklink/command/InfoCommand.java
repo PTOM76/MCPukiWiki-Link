@@ -31,10 +31,10 @@ public class InfoCommand extends LiteralCommand {
             // map の内容をjsonに変換して表示
             //Gson gson = new Gson();
             //String json = gson.toJson(map);
-            //e.sendSuccess("§5[§aPukiWikiLink§5] §r" + json, false);
+            //e.sendSuccess(PukiWikiLink.PREFIX + "" + json, false);
 
         } catch (IOException ex) {
-            e.sendFailure("§5[§aPukiWikiLink§5] §rFailed to get information from the PukiWiki");
+            e.sendFailure(PukiWikiLink.PREFIX + "Failed to get information from the PukiWiki");
             ex.printStackTrace();
         }
     }
