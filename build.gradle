@@ -29,7 +29,14 @@ repositories {
     maven { url "https://maven.terraformersmc.com/releases" }
     maven { url "https://maven.nucleoid.xyz/" }
     maven { url "https://maven.pitan76.net/" }
-    maven { url "https://maven.pkg.github.com/PTOM76/maven" }
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/PTOM76/maven")
+        credentials {
+            username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+            password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 
 dependencies {
@@ -39,9 +46,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-    modImplementation "net.pitan76:mcpitanlib-fabric${project.mcpitanlib_version}"
-    include "net.pitan76:mcpitanlib_checker-fabric:${project.mcpitanlib_checker_version}"
+    modImplementation "net.pitan76:mcpitanlib-fabric-${project.mcpitanlib_version}"
+    //include "net.pitan76:mcpitanlib_checker-fabric:${project.mcpitanlib_checker_version}"
 
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
