@@ -25,12 +25,12 @@ public class PWLCommand extends LiteralCommand {
     }
 
     public static void help(ServerCommandEvent e) {
-        e.sendSuccess(PukiWikiLink.PREFIX + " Help");
-        e.sendSuccess("- /pkwklink help - Show this help");
-        e.sendSuccess("- /pkwklink reload - Reload the PukiWikiLink");
-        e.sendSuccess("- /pkwklink link <url> <token> - Link the PukiWiki");
-        e.sendSuccess("- /pkwklink info - Try to get information from the PukiWiki");
-        e.sendSuccess("- /pkwklink page [read/write/append] <page> (<source>) - Read/Write/Append the page");
+        e.sendSuccess(PukiWikiLink.PREFIX + "Help");
+        e.sendSuccess("§7-§r /pkwklink help - Show this help");
+        e.sendSuccess("§7-§r /pkwklink reload - Reload the PukiWikiLink");
+        e.sendSuccess("§7-§r /pkwklink link <url> <token> - Link the PukiWiki");
+        e.sendSuccess("§7-§r /pkwklink info - Try to get information from the PukiWiki");
+        e.sendSuccess("§7-§r /pkwklink page [read/write/append] <page> (<source>) - Read/Write/Append the page");
 
     }
 }

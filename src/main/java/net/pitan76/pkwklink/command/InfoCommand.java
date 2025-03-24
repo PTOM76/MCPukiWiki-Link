@@ -24,9 +24,9 @@ public class InfoCommand extends LiteralCommand {
             String title = map.get("page_title").toString();
             String admin = map.get("modifier").toString();
 
-            e.sendSuccess("§5[§aPukiWikiLink§5]§r\n" +
-                "- " + TextUtil.translatable("message.pkwklink.title").getString() + ": " + title + "\n" +
-                "- " + TextUtil.translatable("message.pkwklink.admin").getString() + ": " + admin);
+            e.sendSuccessWithTranslatable(PukiWikiLink.PREFIX + "\n" +
+                "§7-§r {message.pkwklink.title}: " + title + "\n" +
+                "§7-§r {message.pkwklink.admin}: " + admin);
 
             // map の内容をjsonに変換して表示
             //Gson gson = new Gson();
