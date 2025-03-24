@@ -21,20 +21,20 @@ public class InfoCommand extends LiteralCommand {
         try {
             Map<String, Object> map = PukiWikiLink.pukiBot.getInfo(true, false);
 
-            String title = map.get("page_title").toString();
-            String admin = map.get("modifier").toString();
+            if (map.containsKey("page_title")) {
+                String title = map.get("page_title").toString();
+                String admin = map.get("modifier").toString();
 
-            e.sendSuccessWithTranslatable(PukiWikiLink.PREFIX + "\n" +
-                "§7-§r {message.pkwklink.title}: " + title + "\n" +
-                "§7-§r {message.pkwklink.admin}: " + admin);
+                e.sendSuccessWithTranslatable(PukiWikiLink.PREFIX + "\n" +
+                        "§7-§r {message.pkwklink.title}: " + title + "\n" +
+                        "§7-§r {message.pkwklink.admin}: " + admin);
+                return;
+            }
 
-            // map の内容をjsonに変換して表示
-            //Gson gson = new Gson();
-            //String json = gson.toJson(map);
-            //e.sendSuccess(PukiWikiLink.PREFIX + "" + json);
-
+            String msg = map.containsKey("msg") ? map.get("msg").toString() : "no message";
+            e.sendFailure(PukiWikiLink.PREFIX + "Failed to get info from the PukiWiki: " + msg);
         } catch (IOException ex) {
-            e.sendFailure(PukiWikiLink.PREFIX + "Failed to get information from the PukiWiki");
+            e.sendFailure(PukiWikiLink.PREFIX + "Network error");
             ex.printStackTrace();
         }
     }

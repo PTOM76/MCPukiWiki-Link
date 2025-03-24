@@ -17,7 +17,7 @@ public class ReadCommand extends LiteralCommand {
 
             @Override
             public void init(CommandSettings settings) {
-                settings.permissionLevel(3);
+                settings.permissionLevel(2);
             }
 
             @Override

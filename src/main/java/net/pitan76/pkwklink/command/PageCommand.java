@@ -17,7 +17,7 @@ public class PageCommand extends LiteralCommand {
 
     @Override
     public void init(CommandSettings settings) {
-        settings.permissionLevel(3);
+        settings.permissionLevel(2);
         addArgumentCommand("read", new ReadCommand());
         addArgumentCommand("write", new WriteCommand());
         addArgumentCommand("append", new AppendCommand());

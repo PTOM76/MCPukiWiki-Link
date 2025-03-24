@@ -20,13 +20,13 @@ public class AppendCommand extends LiteralCommand {
 
             @Override
             public void init(CommandSettings settings) {
-                settings.permissionLevel(3);
+                settings.permissionLevel(2);
 
                 addArgumentCommand(new StringCommand() {
 
                     @Override
                     public void init(CommandSettings settings) {
-                        settings.permissionLevel(3);
+                        settings.permissionLevel(2);
 
                         addArgumentCommand(new BooleanCommand() {
                             @Override

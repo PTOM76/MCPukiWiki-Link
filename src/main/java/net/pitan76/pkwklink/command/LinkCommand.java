@@ -66,6 +66,14 @@ public class LinkCommand extends LiteralCommand {
 
     @Override
     public void execute(ServerCommandEvent e) {
-        e.sendSuccess(PukiWikiLink.PREFIX + "/pkwklink link <url> <token>");
+        String url = PWLConfig.url;
+        String token = PWLConfig.token;
+        String masked = token.substring(0, token.length() / 2) + "*".repeat(token.length() / 2);
+
+        e.sendSuccess(PukiWikiLink.PREFIX + "Link Information");
+        e.sendSuccess("§7-§r URL: " + url);
+        e.sendSuccess("§7-§r Token: " + masked);
+        e.sendSuccess("");
+        e.sendSuccess("§ausage:§r /pkwklink link <url> <token>");
     }
 }

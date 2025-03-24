@@ -20,13 +20,13 @@ public class WriteCommand extends LiteralCommand {
 
             @Override
             public void init(CommandSettings settings) {
-                settings.permissionLevel(3);
+                settings.permissionLevel(2);
 
                 addArgumentCommand(new StringCommand() {
 
                     @Override
                     public void init(CommandSettings settings) {
-                        settings.permissionLevel(3);
+                        settings.permissionLevel(2);
 
                         addArgumentCommand(new BooleanCommand() {
                             @Override
@@ -88,7 +88,7 @@ public class WriteCommand extends LiteralCommand {
                 return;
             }
 
-            e.sendFailure(PukiWikiLink.PREFIX + "Failed to wrote the page: " + msg);
+            e.sendFailure(PukiWikiLink.PREFIX + "Failed to write the page: " + msg);
         } catch (IOException ex) {
             e.sendFailure(PukiWikiLink.PREFIX + "Network error");
             ex.printStackTrace();
