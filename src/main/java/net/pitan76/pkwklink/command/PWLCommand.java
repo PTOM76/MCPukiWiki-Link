@@ -30,7 +30,7 @@ public class PWLCommand extends LiteralCommand {
         e.sendSuccess("§7-§r /pkwklink reload - Reload the PukiWikiLink");
         e.sendSuccess("§7-§r /pkwklink link <url> <token> - Link the PukiWiki");
         e.sendSuccess("§7-§r /pkwklink info - Try to get information from the PukiWiki");
-        e.sendSuccess("§7-§r /pkwklink page [read/write/append] <page> (<source>) - Read/Write/Append the page");
+        e.sendSuccess("§7-§r /pkwklink page [read/write/append] <page> (<source>) (<notimestamp>) - Read/Write/Append the page");
 
     }
 }
