@@ -51,8 +51,8 @@ dependencies {
 
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
-    implementation "net.pitan76:pukibot:1.0.0"
-    include "net.pitan76:pukibot:1.0.0"
+    implementation "net.pitan76:pukibot:1.0.1"
+    include "net.pitan76:pukibot:1.0.1"
 }
 
 processResources {

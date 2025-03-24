@@ -30,10 +30,17 @@ public class ReadCommand extends LiteralCommand {
                     return;
                 }
 
-                String source = map.get("source").toString();
-                source = source.replaceAll("\\\\n", "\n");
+                if (map.containsKey("source")) {
+                    String source = map.get("source").toString();
+                    source = source.replaceAll("\\\\n", "\n");
 
-                e.sendSuccess("Title: " + page + "\nSource: \n" + source);
+                    e.sendSuccess("Title: " + page + "\nSource: \n" + source);
+                    return;
+                }
+
+                // source があるときはmsgがないので、あとにmsgを取得することにした
+                String msg = map.containsKey("msg") ? map.get("msg").toString() : "no message";
+                e.sendFailure(PukiWikiLink.PREFIX + "Failed to get the page: " + msg);
             }
 
             @Override
