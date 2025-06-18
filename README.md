@@ -20,7 +20,7 @@ PukiBot使ってるので使うにはbot.inc.phpをPukiWiki側に入れてセッ
 ### `/pkwklink help`
 MODのコマンドヘルプを表示します。
 
--   **権限レベル:** (PWLCommand.javaで定義されているため、PWLCommandの権限レベルに依存。デフォルトは0)
+-   **権限レベル:** 0
 -   **実行例:** `/pkwklink help`
 -   **説明:** 利用可能なコマンドの一覧とその簡単な説明を表示します。
 
@@ -29,7 +29,7 @@ MODのコマンドヘルプを表示します。
 ### `/pkwklink reload`
 MODの設定ファイルを再読み込みします。
 
--   **権限レベル:** (ReloadCommand.javaで定義されているため、PWLCommandの権限レベルに依存。デフォルトは0)
+-   **権限レベル:** 0
 -   **実行例:** `/pkwklink reload`
 -   **説明:** `pkwklink.properties` などの設定ファイルを再読み込みし、変更をMODに反映させます。
 
@@ -38,7 +38,7 @@ MODの設定ファイルを再読み込みします。
 ### `/pkwklink link <url> <token>`
 PukiWikiとの連携設定を行います。
 
--   **権限レベル:** 3 (オペレーター権限が必要)
+-   **権限レベル:** 3 (OP権限必須)
 -   **引数:**
     -   `<url>`: 連携するPukiWikiのURL (例: `http://example.com/pukiwiki/`)
     -   `<token>`: PukiWikiのAPIトークン
@@ -51,7 +51,7 @@ PukiWikiとの連携設定を行います。
 ### `/pkwklink info`
 連携しているPukiWikiから基本情報を取得します。
 
--   **権限レベル:** (InfoCommand.javaで定義されているため、PWLCommandの権限レベルに依存。デフォルトは0)
+-   **権限レベル:** 0
 -   **実行例:** `/pkwklink info`
 -   **説明:** 連携設定済みのPukiWikiからサイトのタイトルや管理者名などの情報を取得して表示します。連携に失敗している場合はエラーメッセージが表示されます。
 
@@ -73,7 +73,7 @@ PukiWikiのページを操作するための親コマンドです。
 ### `/pkwklink page read <page>`
 PukiWikiの指定されたページの内容を読み込み、表示します。
 
--   **権限レベル:** (PageCommandのサブコマンドのため、PageCommandの権限レベルに依存。デフォルトは2)
+-   **権限レベル:** 2
 -   **引数:**
     -   `<page>`: 読み込むPukiWikiのページ名
 -   **実行例:** `/pkwklink page read FrontPage`
@@ -84,7 +84,7 @@ PukiWikiの指定されたページの内容を読み込み、表示します。
 ### `/pkwklink page write <page> <source>`
 PukiWikiの指定されたページに新しい内容を書き込みます（既存の内容は上書きされます）。
 
--   **権限レベル:** (PageCommandのサブコマンドのため、PageCommandの権限レベルに依存。デフォルトは2)
+-   **権限レベル:** 2
 -   **引数:**
     -   `<page>`: 書き込むPukiWikiのページ名
     -   `<source>`: 書き込む内容
@@ -96,7 +96,7 @@ PukiWikiの指定されたページに新しい内容を書き込みます（既
 ### `/pkwklink page append <page> <source> (<notimestamp>)`
 PukiWikiの指定されたページに内容を追記します。
 
--   **権限レベル:** (PageCommandのサブコマンドのため、PageCommandの権限レベルに依存。デフォルトは2)
+-   **権限レベル:** 2
 -   **引数:**
     -   `<page>`: 追記するPukiWikiのページ名
     -   `<source>`: 追記する内容
