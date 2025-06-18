@@ -1,4 +1,113 @@
-# MCPukiWiki Link
+# MCPukiWiki Link (English)
+This is a mod with a somewhat unclear purpose, but it allows you to read from and write to PukiWiki pages from within Minecraft.
+Since it uses PukiBot, you need to install and set up `bot.inc.php` on your PukiWiki side to use it.
+
+## MCPukiWiki-Link MOD Command List
+
+### `/pkwklink`
+This is the root command. Executing it displays the MOD's greeting message.
+
+-   **Permission Level:** 0 (Anyone can execute)
+-   **Subcommands:**
+    -   `help`: Displays the help message.
+    -   `reload`: Reloads the configuration file.
+    -   `link`: Sets up the link with PukiWiki.
+    -   `info`: Retrieves information from PukiWiki.
+    -   `page`: Operates on PukiWiki pages.
+
+---
+
+### `/pkwklink help`
+Displays the MOD's command help.
+
+-   **Permission Level:** 0
+-   **Example:** `/pkwklink help`
+-   **Description:** Displays a list of available commands and their brief descriptions.
+
+---
+
+### `/pkwklink reload`
+Reloads the MOD's configuration file.
+
+-   **Permission Level:** 0
+-   **Example:** `/pkwklink reload`
+-   **Description:** Reloads configuration files like `pkwklink.properties` and applies the changes to the MOD.
+
+---
+
+### `/pkwklink link <url> <token>`
+Sets up the link with PukiWiki.
+
+-   **Permission Level:** 3 (OP privileges required)
+-   **Arguments:**
+    -   `<url>`: URL of the PukiWiki to link (e.g., `http://example.com/pukiwiki/`)
+    -   `<token>`: PukiWiki API token
+-   **Example:** `/pkwklink link http://example.com/pukiwiki/ abcdef12345`
+-   **Description:** Links the MOD with PukiWiki using the specified URL and token. The settings are saved, allowing the MOD to communicate with PukiWiki.
+-   **When executed without arguments:** Displays the current link information (token is partially masked).
+
+---
+
+### `/pkwklink info`
+Retrieves basic information from the linked PukiWiki.
+
+-   **Permission Level:** 0
+-   **Example:** `/pkwklink info`
+-   **Description:** Retrieves and displays information such as the site title and admin name from the configured PukiWiki. An error message is displayed if the link fails.
+
+---
+
+### `/pkwklink page`
+This is the parent command for operating on PukiWiki pages.
+
+-   **Permission Level:** 2
+-   **Subcommands:**
+    -   `read <page>`: Reads the specified page.
+    -   `write <page> <source>`: Writes content to the specified page.
+    -   `append <page> <source> (<notimestamp>)`: Appends content to the specified page.
+-   **Example (without subcommands):** `/pkwklink page` (Displays usage hints)
+-   **Description:** A group of commands for viewing, editing, and appending to PukiWiki pages.
+
+---
+
+### `/pkwklink page read <page>`
+Reads and displays the content of the specified PukiWiki page.
+
+-   **Permission Level:** 2
+-   **Arguments:**
+    -   `<page>`: Name of the PukiWiki page to read
+-   **Example:** `/pkwklink page read FrontPage`
+-   **Description:** Retrieves the content of the specified PukiWiki page and displays it in the chat.
+
+---
+
+### `/pkwklink page write <page> <source>`
+Writes new content to the specified PukiWiki page (existing content will be overwritten).
+
+-   **Permission Level:** 2
+-   **Arguments:**
+    -   `<page>`: Name of the PukiWiki page to write to
+    -   `<source>`: Content to write
+-   **Example:** `/pkwklink page write TestPage "This is a test page."`
+-   **Description:** Writes the specified content to the specified PukiWiki page. If the page does not exist, it may be created.
+
+---
+
+### `/pkwklink page append <page> <source> (<notimestamp>)`
+Appends content to the specified PukiWiki page.
+
+-   **Permission Level:** 2
+-   **Arguments:**
+    -   `<page>`: Name of the PukiWiki page to append to
+    -   `<source>`: Content to append
+    -   `(<notimestamp>)`: (Optional) If `true` is specified, a timestamp will not be added when appending. By default, a timestamp is added.
+-   **Examples:**
+    -   `/pkwklink page append LogPage "New log entry"`
+    -   `/pkwklink page append LogPage "Log without timestamp" true`
+-   **Description:** Appends the specified content to the end of the specified PukiWiki page.
+
+
+# MCPukiWiki Link (日本語)
 無駄に利用用途が不明なmodですが、マイクラからPukiWikiのページを読み込んだり書き込んだりとかできます。
 PukiBot使ってるので使うにはbot.inc.phpをPukiWiki側に入れてセットアップする必要があります。
 
