@@ -122,7 +122,7 @@ if (System.getenv("CURSEFORGE_TOKEN") != null) {
     curseforge {
         apiKey = System.getenv("CURSEFORGE_TOKEN")
         project {
-            id = '528338'
+            id = '1287694'
             changelog = project.changelog + "\nMCPitanLib version: " + mcpitanlib_version.split(":")[1]
             releaseType = 'release'
             addGameVersion "Fabric"
@@ -140,33 +140,15 @@ if (System.getenv("CURSEFORGE_TOKEN") != null) {
             addGameVersion '1.21.1'
             addGameVersion '1.21.2'
             addGameVersion '1.21.3'
+            addGameVersion '1.21.4'
+            addGameVersion '1.21.5'
+            addGameVersion '1.21.6'
             relations {
                 requiredDependency "fabric-api"
                 requiredDependency "mcpitanlibarch"
-                optionalDependency "techreborn"
-                optionalDependency "modmenu"
-                optionalDependency "storagebox-fabric"
-                optionalDependency "cloth-config"
             }
 
             mainArtifact(tasks.remapJar)
-        }
-    }
-}
-
-if (System.getenv("MODRINTH_TOKEN") != null) {
-    modrinth {
-        token = System.getenv("MODRINTH_TOKEN")
-        projectId = 'JcIgEOzn'
-        versionNumber = project.mod_version + "-fabric"
-        gameVersions = ['1.18', '1.18.1', '1.18.2', '1.19', '1.19.1', '1.19.2', '1.20', '1.20.1', '1.20.3', '1.20.4', '1.21', '1.21.1', '1.21.2', '1.21.3']
-        versionType = 'release'
-        uploadFile = tasks.remapJar
-        changelog = project.changelog + "\nMCPitanLib version: " + mcpitanlib_version.split(":")[1]
-        loaders = ["fabric"]
-        dependencies {
-            required.project "P7dR8mSH" // Fabric API
-            required.project "uNRoUnGT"
         }
     }
 }
