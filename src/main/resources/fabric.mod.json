@@ -4,8 +4,13 @@
   "version": "${version}",
   "name": "PukiWiki Link",
   "description": "Linking pukiwiki and minecraft for fabric",
-  "authors": [],
-  "contact": {},
+  "authors": [
+    "pitan76"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/pukiwiki-link",
+    "sources": "https://github.com/PTOM76/MCPukiWiki-Link"
+  },
   "license": "MIT",
   "icon": "assets/pkwklink/icon.png",
   "environment": "*",
@@ -25,8 +30,8 @@
     }
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": "*",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "*"
   }
 }
